@@ -5,10 +5,14 @@ now support
  - Alibaba Cloud OSS 
  - qcloud cos
 
+```shell
+pip install sts-credentials
+```
+
 ```python
-from sts_credentials.credentials.oss import get_credential_oss
-from sts_credentials.credentials.cos import get_credential_cos
-from secrets_for_test import (
+from sts_credentials import get_credential_oss
+from sts_credentials import get_credential_cos
+from secrets import (
     aliyun_access_key_id,
     aliyun_access_key_secret,
     aliyun_bucket,
@@ -64,7 +68,7 @@ print(
 #     startTime: int
 
 import time
-from sts_credentials.utils.decorators import ttl_lru_cache
+from sts_credentials import ttl_lru_cache
 
 
 @ttl_lru_cache(ttl=2)
