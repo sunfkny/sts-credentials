@@ -69,7 +69,7 @@ from sts_credentials.utils.decorators import ttl_lru_cache
 
 @ttl_lru_cache(ttl=2)
 def test_func(i=0):
-    return i
+    return time.time() - i
 
 
 assert test_func(123) != test_func(456)
